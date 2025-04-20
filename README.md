@@ -21,6 +21,8 @@
 
 1. Navigate to the `Methodology #1` directory.
 2. Run the following scripts in order:
+3. Note: You do not have to run these commands, they are here to let you know which files to run
+
    ```bash
    python 'Methodology #1/Visiontransformer.py'
    python 'Methodology #1/XGBoost_ML.py'
