@@ -125,7 +125,7 @@ final_df.dropna(inplace=True)
 print(f"New shape after dropping NaNs: {final_df.shape}")
 
 print(len(final_df[final_df['disorder'] == 'OCD']))
-output_path = path + r'\Interim\final_fc_dataset.csv'
+output_path = path + r'/Interim/final_fc_dataset.csv'
 final_df.to_csv(output_path, index=False)
 print(f"Saved to: {output_path}")
 
