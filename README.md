@@ -21,8 +21,8 @@
 1. Navigate to the `Methodology #1` directory.
 2. Run the following scripts in order:
    ```bash
-   python Visiontransformer.py
-   python XGBoost_ML.py
+   python 'Methodology #1/Visiontransformer.py'
+   python 'Methodology #1/XGBoost_ML.py'
    ```
 
 ### 🔹 Methodology #2
@@ -30,9 +30,9 @@
 1. Navigate to the `Methodology #2` directory.
 2. Run the following scripts in sequence:
    ```bash
-   python Create_FC_Dataset.py
-   python FC_NN_Stage1.py
-   python FC_NN_Stage2.py
+   python 'Methodology #2/Create_FC_Dataset.py'
+   python 'Methodology #2/FC_NN_Stage1.py'
+   python 'Methodology #2/FC_NN_Stage2.py'
    ```
 
 ---
