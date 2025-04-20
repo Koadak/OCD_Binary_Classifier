@@ -22,24 +22,24 @@ def load_and_print_mat(file_path, key='X'):
 
 # ---------- Dataset Definitions ----------
 datasets = {
-    "ATR_OCD": (path + r'\Methodology2_Scans\ATR\OCD\BAL-ATR_2OCDPatients.mat', 'mat_1D'),
-    "UTO_MDD": (path + r'\Methodology2_Scans\UTO\UTO_GEMR750W_30_BAL\UTO_GEMR750W_30_02_BAL_COR.mat', 'X'),
-    "UTO_SCZ": (path + r'\Methodology2_Scans\UTO\UTO_GEMR750W_30_BAL\UTO_GEMR750W_30_04_BAL_COR.mat', 'X'),
-    "KPUM_OCD": (path + r'\Methodology2_Scans\KPUM\BAL-KPUM_9OCDPatients.mat', 'X'),
-    "KyotoU_DEP": (path + r'\Methodology2_Scans\KyotoU\DEP\BAL-KyotoU_UKY_DEP_16_BAL_BP39_COR.mat', 'X'),
-    "KyotoU_HC": (path + r'\Methodology2_Scans\KyotoU\HC\BAL-KyotoU_UKY_HC_234_BAL_BP39_COR.mat', 'X'),
-    "KyotoU_SCZ": (path + r'\Methodology2_Scans\KyotoU\SSD\BAL-KyotoU_UKY_SSD_92_BAL_BP39_COR.mat', 'X'),
-    "UTO_HC": (path + r'\Methodology2_Scans\UTO\UTO_GEMR750W_30_BAL\UTO_GEMR750W_30_00_BAL_COR.mat', 'X'),
-    "ATR_HC": (path + r'\Methodology2_Scans\ATR\HC\BAL-ATR_BP39_COR.mat', 'X'),
-    "ShowaU": (path + r'\Methodology2_Scans\ShowaU\SWA_FC_Matrices_N235.mat', 'FCMat'),
-    "HiroshimaU": (path + r'\Methodology2_Scans\HiroshimaU\DEP_BAL-UHIBP39_COR.mat', 'X')
+    "ATR_OCD": (path + r'/Methodology2_Scans/ATR/OCD/BAL-ATR_2OCDPatients.mat', 'mat_1D'),
+    "UTO_MDD": (path + r'/Methodology2_Scans/UTO/UTO_GEMR750W_30_BAL/UTO_GEMR750W_30_02_BAL_COR.mat', 'X'),
+    "UTO_SCZ": (path + r'/Methodology2_Scans/UTO/UTO_GEMR750W_30_BAL/UTO_GEMR750W_30_04_BAL_COR.mat', 'X'),
+    "KPUM_OCD": (path + r'/Methodology2_Scans/KPUM/BAL-KPUM_9OCDPatients.mat', 'X'),
+    "KyotoU_DEP": (path + r'/Methodology2_Scans/KyotoU/DEP/BAL-KyotoU_UKY_DEP_16_BAL_BP39_COR.mat', 'X'),
+    "KyotoU_HC": (path + r'/Methodology2_Scans/KyotoU/HC/BAL-KyotoU_UKY_HC_234_BAL_BP39_COR.mat', 'X'),
+    "KyotoU_SCZ": (path + r'/Methodology2_Scans/KyotoU/SSD/BAL-KyotoU_UKY_SSD_92_BAL_BP39_COR.mat', 'X'),
+    "UTO_HC": (path + r'/Methodology2_Scans/UTO/UTO_GEMR750W_30_BAL/UTO_GEMR750W_30_00_BAL_COR.mat', 'X'),
+    "ATR_HC": (path + r'/Methodology2_Scans/ATR/HC/BAL-ATR_BP39_COR.mat', 'X'),
+    "ShowaU": (path + r'/Methodology2_Scans/ShowaU/SWA_FC_Matrices_N235.mat', 'FCMat'),
+    "HiroshimaU": (path + r'/Methodology2_Scans/HiroshimaU/DEP_BAL-UHIBP39_COR.mat', 'X')
 }
 
 # ---------- Load All Standard .mat Data ----------
 loaded_data = {name: load_and_print_mat(path, key) for name, (path, key) in datasets.items()}
 
 # ---------- Load and Label Oblique OCD Data ----------
-oblique_path = path + r'\Methodology2_Scans\ATR\OCD-oblique\BAL-ATR_2OCDPatients_oblique.mat'
+oblique_path = path + r'/Methodology2_Scans/ATR/OCD-oblique/BAL-ATR_2OCDPatients_oblique.mat'
 ATR_OCD_Oblique = np.loadtxt(oblique_path, comments='#')
 print("\nATR_OCD_Oblique shape:", ATR_OCD_Oblique.shape)
 
@@ -47,7 +47,7 @@ oblique_df = pd.DataFrame(ATR_OCD_Oblique)
 oblique_df['disorder'] = 'OCD'
 
 # ---------- Process ShowaU Diagnosis ----------
-showa_df = pd.read_csv(path + r'\Methodology2_Scans\ShowaU\SUBINFO_ShowaU_for_SWA_N235.tsv', sep='\t')
+showa_df = pd.read_csv(path + r'/Methodology2_Scans/ShowaU/SUBINFO_ShowaU_for_SWA_N235.tsv', sep='\t')
 assert loaded_data["ShowaU"].shape[0] == len(showa_df), "Mismatch in ShowaU"
 showa_diag = showa_df['Diagnosis'].values
 
@@ -58,7 +58,7 @@ ShowaU_SCZ = pd.DataFrame(loaded_data["ShowaU"][showa_diag == 2])
 ShowaU_SCZ['disorder'] = 'SCZ'
 
 # ---------- Process HiroshimaU Diagnosis ----------
-hiro_df = pd.read_csv(path + r'\Methodology2_Scans\HiroshimaU\SUBINFO_HiroshimaU.tsv', sep='\t')
+hiro_df = pd.read_csv(path + r'/Methodology2_Scans/HiroshimaU/SUBINFO_HiroshimaU.tsv', sep='\t')
 assert loaded_data["HiroshimaU"].shape[0] == len(hiro_df), "Mismatch in HiroshimaU"
 hiro_diag = hiro_df['Diagnosis(Healthy=1, Depression=2)'].values
 
