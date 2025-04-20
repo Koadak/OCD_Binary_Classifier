@@ -126,7 +126,7 @@ print(f"\nTest Accuracy: {accuracy:.4f}")
 
 
 # --- SAVE MODEL ---
-model_path = path + r'/Models/fc_isHC_model2.h5'
+model_path = path + r'/Models/fc_isHC_model.h5'
 model.save(model_path)
 print(f"Model saved to: {model_path}")
 

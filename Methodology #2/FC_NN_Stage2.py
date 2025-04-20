@@ -4,12 +4,14 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+import os
 
+path = os.getcwd()
 # --- LOAD MODEL ---
-model = load_model(r'fc_isHC_model2.h5')
+model = load_model(path + r'/Models/fc_isHC_model.h5')
 
 # --- LOAD DATA ---
-df = pd.read_csv(r'C:\Users\jgdga\PycharmProjects\OCD_Tester2\ocd_plus_heldout_hc.csv')
+df = pd.read_csv(path + r'\Interim\ocd_plus_heldout_hc.csv')
 
 # Split separately by class
 df_hc = df[df['is_HC'] == 1]
