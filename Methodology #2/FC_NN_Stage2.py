@@ -11,7 +11,7 @@ path = os.getcwd()
 model = load_model(path + r'/Models/fc_isHC_model.h5')
 
 # --- LOAD DATA ---
-df = pd.read_csv(path + r'\Interim\ocd_plus_heldout_hc.csv')
+df = pd.read_csv(path + r'/Interim/ocd_plus_heldout_hc.csv')
 
 # Split separately by class
 df_hc = df[df['is_HC'] == 1]
