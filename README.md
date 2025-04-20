@@ -11,6 +11,7 @@
    - Move `Methodology2_Scans` into the `Methodology #2` directory.  
    
    > Both folders are available in the Canvas assignment titled **“Week 13: Final Report and Presentation”**
+   > This project uses python 3.10
 
 ---
 
