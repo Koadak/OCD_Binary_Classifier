@@ -35,7 +35,7 @@ df_ocd = df[df['disorder'] == 'OCD']
 df_ocd_with_hc = pd.concat([df_ocd, hc_holdout], axis=0).reset_index(drop=True)
 
 # Save to CSV
-output_path = r'/ocd_plus_heldout_hc.csv'
+output_path = path + r'/Interim/ocd_plus_heldout_hc.csv'
 df_ocd_with_hc.to_csv(output_path, index=False)
 
 print(f"OCD + Held-out HC saved to: {output_path}")
@@ -126,7 +126,7 @@ print(f"\nTest Accuracy: {accuracy:.4f}")
 
 
 # --- SAVE MODEL ---
-model_path = path + r'Models/fc_isHC_model2.h5'
+model_path = path + r'/Models/fc_isHC_model2.h5'
 model.save(model_path)
 print(f"Model saved to: {model_path}")
 
