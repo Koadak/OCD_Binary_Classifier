@@ -11,7 +11,7 @@ import os
 
 start_path = os.getcwd()
 # Path to image directory
-path = start_path + r'\Methodology1_Scans'
+path = start_path + r'/Methodology1_Scans'
 
 # print(path)
 # Lists to store GM and FA Methodology1_Scans with labels
