@@ -5,6 +5,11 @@
    ```bash
    pip install -r requirements.txt
    ```
+   If there is an error requiring the install of Rust and Cargo, please run the following command:
+   ```bash
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
+   You might want to delete this from your PATH variables after running the code
 
 2. **Place the scan folders**  
    - Move `Methodology1_Scans` into the `Methodology #1` directory.
