@@ -22,6 +22,7 @@
 
 ## 🚀 Running the Code
 
+Note: If there is a file not found error, the "path" variable inside the codes can be changed to the proper folders necessary
 ### 🔹 Methodology #1
 
 1. Navigate to the `Methodology #1` directory.
